@@ -1,4 +1,5 @@
 node_modules/
+dist/
 built/*
 tests/cases/rwc/*
 tests/cases/test262/*
@@ -57,3 +58,4 @@ internal/
 !tests/cases/projects/NodeModulesSearch/**/*
 !tests/baselines/reference/project/nodeModules*/**/*
 .idea
+npm-debug.log

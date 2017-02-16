@@ -11,10 +11,10 @@ gulp.task('scripts', () => {
   .pipe(tsProject());
   return tsResult.js.pipe(gulp.dest('dist'));
 });
-// mongod is installed as windows service -> starting and stoping using net start/stop command
-// made as windows service due to problem with running cmd command in background
+// mongod is set up as windows service -> starting and stoping using net start/stop command
+// made as windows service due to problem with running cmd start command in background
 // to use those run vscode as admin
-//TODO: Change to start as normal command
+//TODO: Change to start mongod as normal command
 gulp.task('start-mongo', function (cb) {
   exec('net start MongoDB', function (err, stdout, stderr) {
     console.log(stdout);
@@ -33,6 +33,7 @@ gulp.task('stop-mongo', function (cb) {
   });
 })
 
+//watcher
 gulp.task('watch', ['scripts'], () => {
   gulp.watch('src/**/*.ts', ['scripts']);
 });
