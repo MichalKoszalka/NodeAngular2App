@@ -4,12 +4,31 @@
     "module": "commonjs",
     "outDir": "dist",
     "watch": true,
-    "noEmitOnError": true
+    "noEmitOnError": true,
+    "rootDir": ".",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": ["es6", "dom"]
   },
   "include": [
     "src/**/*.ts"
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "useWebpackText": true
+  },
+  "angularCompilerOptions": {
+    "debug": false
+  },
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": { "rewriteTsconfig": false },
+  "typingOptions": { "enableAutoDiscovery": false, "include": [], "exclude": [] }
 }
