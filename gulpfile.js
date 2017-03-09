@@ -9,7 +9,7 @@ const tsProject = ts.createProject('tsconfig.json');
 gulp.task('scripts', () => {
   const tsResult = tsProject.src()
   .pipe(tsProject());
-  return tsResult.js.pipe(gulp.dest('dist'));
+  return tsResult.js.pipe(gulp.dest('dist/backend'));
 });
 // mongod is set up as windows service -> starting and stoping using net start/stop command
 // made as windows service due to problem with running cmd start command in background
@@ -35,7 +35,8 @@ gulp.task('stop-mongo', function (cb) {
 
 //watcher
 gulp.task('watch', ['scripts'], () => {
-  gulp.watch('src/**/*.ts', ['scripts']);
+  gulp.watch('src/backend/**/*.ts', ['scripts']);
+  gulp.watch('src/model/**/*.ts', ['scripts']);
 });
 
 gulp.task('default', ['watch']);

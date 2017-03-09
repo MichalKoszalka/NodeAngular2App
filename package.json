@@ -9,7 +9,7 @@
     "build": "webpack --progress",
     "watch": "npm run build -- --watch",
     "server": "webpack-dev-server --inline --progress --port 3000 --content-base src",
-    "start": "npm run server || npm run startbackend"
+    "start": "npm run server"
   },
   "repository": {
     "type": "git",

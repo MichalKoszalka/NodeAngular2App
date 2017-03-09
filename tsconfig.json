@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
-    "outDir": "dist",
+    "outDir": "dist/backend",
     "watch": true,
     "noEmitOnError": true,
     "rootDir": ".",
@@ -16,7 +16,7 @@
     "lib": ["es6", "dom"]
   },
   "include": [
-    "src/**/*.ts"
+    "src/model/**/*.ts", "src/backend/**/*.ts"
   ],
   "exclude": [
     "node_modules"
@@ -29,6 +29,5 @@
   },
   "compileOnSave": false,
   "buildOnSave": false,
-  "atom": { "rewriteTsconfig": false },
-  "typingOptions": { "enableAutoDiscovery": false, "include": [], "exclude": [] }
+  "atom": { "rewriteTsconfig": false }
 }
