@@ -4,13 +4,13 @@
   "description": "node and angular web application",
   "main": "index.js",
   "scripts": {
-    "startbackend": "node dist/index.js",
+    "startbackend": "node dist/backend/index.js",
     "test": "mocha --reporter spec --compilers ts:ts-node/register test/**/*.test.ts",
     "build": "webpack --progress",
     "watch": "npm run build -- --watch",
-    "server": "webpack-dev-server --inline --progress --port 3000 --content-base src",
+    "server": "webpack-dev-server --inline --progress --port 3001 --content-base web",
     "start": "npm run server"
-  },
+  },    
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MichalKoszalka/NodeAngular2App.git"

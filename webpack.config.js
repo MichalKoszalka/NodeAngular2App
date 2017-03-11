@@ -5,7 +5,7 @@ var webpackMerge = require('webpack-merge');
 // Webpack Config
 var webpackConfig = {
   entry: {
-    'main': './src/web/main.browser.ts',
+    'main': './web/main.browser.ts',
   },
 
   output: {
@@ -17,7 +17,7 @@ var webpackConfig = {
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
       /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
-      path.resolve(__dirname, './src/web'),
+      path.resolve(__dirname, './web'),
       {
         // your Angular Async Route paths relative to this root directory
       }
