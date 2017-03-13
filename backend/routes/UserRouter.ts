@@ -1,5 +1,5 @@
 import {Router, Request, Response, NextFunction} from 'express';
-import * as User from '../model/User';
+import {User} from '../model/user';
 
 export class UserRouter {
   router: Router

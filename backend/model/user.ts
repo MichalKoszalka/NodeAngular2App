@@ -1,18 +1,16 @@
 import * as mongoose from "mongoose";
 
-interface IUser{
+export interface IUser extends mongoose.Document{
     first_name:string;
     last_name:string;
     email:string;
 }
 
-interface IUserModel extends IUser, mongoose.Document{};
+interface IUserModel extends mongoose.Model<IUser> {};
 var userSchema = new mongoose.Schema({
     first_name: String,
     last_name: String,
     email: String,
 });
 
-var User = mongoose.model<IUserModel>("User", userSchema);
-
-export = User;
+export var User : IUserModel = mongoose.model<IUser>("User", userSchema);
