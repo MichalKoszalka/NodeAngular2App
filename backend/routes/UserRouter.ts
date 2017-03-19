@@ -1,5 +1,5 @@
 import {Router, Request, Response, NextFunction} from 'express';
-import {User} from '../model/user';
+import {User, IUser} from '../model/user';
 
 export class UserRouter {
   router: Router
@@ -16,11 +16,11 @@ export class UserRouter {
    * GET all users.
    */
   public getAll(req: Request, res: Response, next: NextFunction) {
-    User.find((err, Users) => {
+    User.find((err, users) => {
         if (err) {
-            res.json({info: 'error during find Users', error: err});
+            res.json(err);
         };
-        res.json({info: 'Users found successfully', data: Users});
+        res.json(users);
     });
   }
 
@@ -31,9 +31,9 @@ export class UserRouter {
       var newUser = new User(req.body);
       newUser.save((err)=>{
         if (err){
-        res.json({info: 'error during User create', error: err});
+        res.json(err);
         }
-        res.json({info: 'User saved successfully', data: newUser}); 
+        res.json(newUser); 
       });
   }
 
