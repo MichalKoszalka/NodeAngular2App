@@ -1,5 +1,5 @@
 import {Router, Request, Response, NextFunction} from 'express';
-import {User, IUser} from '../model/user';
+import {User} from '../model/user';
 
 export class UserRouter {
   router: Router
@@ -22,6 +22,7 @@ export class UserRouter {
         };
         res.json(users);
     });
+    next();
   }
 
 /**
@@ -35,6 +36,7 @@ export class UserRouter {
         }
         res.json(newUser); 
       });
+      next();
   }
 
   /**

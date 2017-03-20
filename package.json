@@ -4,6 +4,7 @@
   "description": "node and angular web application",
   "main": "index.js",
   "scripts": {
+    "build" : "gulp scripts && webpack --progress",
     "build-backend": "gulp scripts",
     "watch-backend": "gulp watch",
     "backend": "node dist/backend/index.js",

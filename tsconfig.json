@@ -16,7 +16,8 @@
     "lib": ["es6", "dom"]
   },
   "include": [
-    "backend/**/*"
+    "backend/**/*",
+    "web/**/*"
   ],
   "exclude": [
     "node_modules"
